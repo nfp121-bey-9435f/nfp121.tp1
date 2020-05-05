@@ -11,7 +11,7 @@ import java.util.*;
  * "shapes" example.
  *  blabla
  * @author: Bruce Quig
- * @author: Michael Kolling (mik)
+ * @author: Michael Kolling (mik)n
  * 
  * @version: 1.6 (shapes)
  */
