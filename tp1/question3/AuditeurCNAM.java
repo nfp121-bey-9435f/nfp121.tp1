@@ -15,8 +15,8 @@ public class AuditeurCNAM {
     private String prenom;
     /** l'attribut matricule de chaque auditeur. */
     private String matricule;
-	/** l'attribut login de l'auditeur. */
-    private String login;	
+    /** l'attribut login de l'auditeur. */
+    private String login;   
 
     /**
      * "Création", le constructeur d'un auditeur avec son nom, son prénom et son
@@ -30,9 +30,15 @@ public class AuditeurCNAM {
      *            sur la carte d'inscription, près de la photo
      */
     public AuditeurCNAM(String nom, String prenom, String matricule) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.matricule = matricule;
+        if(isNullOrEmpty(nom)){
+            System.out.println("Nom invalide");}
+            else this.nom = nom;
+        if(isNullOrEmpty(prenom)){
+            System.out.println("Prenom invalide");}
+            else this.prenom = prenom;
+        if(isNullOrEmpty(matricule)){
+            System.out.println("Matricule invalide");}
+            else this.matricule = matricule;
     }
 
     /**
@@ -50,7 +56,9 @@ public class AuditeurCNAM {
     public String login() {
         String n = nom;
         String p = prenom;
-
+        
+        
+        
         /**
          * Pas de caractères accentués pour le login
          * Voici une Méthode pour soumettre un String avec accents enlever les accents
@@ -58,7 +66,7 @@ public class AuditeurCNAM {
          */
         n = pasAccents(n);
         p = pasAccents(p);
-
+        
         /**
          * Le trait d'union, ou spéciaux <i>(pour unix)</i> sont remplacés par des '_' 
          */
@@ -100,7 +108,19 @@ public class AuditeurCNAM {
         }
         return x;
     }
-
+    
+    /**
+    * Méthode pour vérifiez si le String est nul ou vide.
+    */
+    // private boolean stringNotEmptyOrNull(String st) {
+    // return st != null && !st.isEmpty();
+    // }  
+   public boolean isNullOrEmpty(String str) {
+        if(str != null && !str.trim().isEmpty()){
+            return false;}
+        else return true;
+    }
+    
     /**
     }
 
@@ -122,7 +142,7 @@ public class AuditeurCNAM {
      */
     public String prenom() {
          return this.prenom; 
-		//return null;// à compléter
+        //return null;// à compléter
     }
 
     /**
@@ -132,7 +152,7 @@ public class AuditeurCNAM {
      */
     public String matricule() {
         return this.matricule;
-	  //  return null;// à compléter
+      //  return null;// à compléter
     }
 
     /**

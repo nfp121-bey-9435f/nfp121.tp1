@@ -131,4 +131,5 @@ public class AuditeurCNAMTest extends junit.framework.TestCase {
         assertEquals(" nom avec accent (@ devient _) ? ", "s_mi_a",
             auditeur1.login());
     }
-}
+    
+    }

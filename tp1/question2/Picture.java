@@ -21,7 +21,7 @@ public class Picture {
     private Triangle roof;
     private Circle sun;
     private Circle sun2;
-
+    private boolean earthfix = false;
     /**
      * Constructor for objects of class Picture
      */
@@ -90,11 +90,21 @@ public class Picture {
             sun.changeColor("yellow");
         }
     }
+    /**
+     * Earth is fix setter.
+     */
     
-    public void sunSet() {
-       int i =0;
-        for(i=130 ;i != 0; i--){
+    public void setEarthfix(boolean fix){
+            earthfix = fix;
+        }
+    /**
+     * Methode Blue Sun sunset because the earth is fix.
+     */    
+        public void sunSet() {
+        if(earthfix){
+        for(int i=130 ;i != 0; i--){
             sun.slowMoveVertical(1);
         }
         }
+    }
 }
