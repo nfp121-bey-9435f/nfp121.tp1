@@ -31,13 +31,13 @@ public class AuditeurCNAM {
      */
     public AuditeurCNAM(String nom, String prenom, String matricule) {
         if(isNullOrEmpty(nom)){
-            System.out.println("Nom invalide");}
+            System.out.println("Nom vide ou nul, veuillez retaper.");}
             else this.nom = nom;
         if(isNullOrEmpty(prenom)){
-            System.out.println("Prenom invalide");}
+            System.out.println("Prenom vide ou nul, veuillez retaper.");}
             else this.prenom = prenom;
         if(isNullOrEmpty(matricule)){
-            System.out.println("Matricule invalide");}
+            System.out.println("Matricule vide ou nul, veuillez retaper.");}
             else this.matricule = matricule;
     }
 
